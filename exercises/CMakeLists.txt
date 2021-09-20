@@ -27,3 +27,15 @@ set(TYPE_SOURCES type_safe/main.cpp type_safe/ex1.cpp type_safe/ex2.cpp type_saf
 add_executable(type_safe ${COMMON_SOURCES} ${TYPE_SOURCES})
 target_compile_options(type_safe PRIVATE -Wall -Wextra -Wpedantic)
 target_link_libraries(type_safe ${CMAKE_THREAD_LIBS_INIT} )
+
+set(VALUES_SOURCES values/main.cpp values/ex1.cpp values/ex2.cpp values/ex3.cpp values/ex4.cpp values/ex5.cpp values/ex6.cpp)
+add_executable(values ${COMMON_SOURCES} ${VALUES_SOURCES})
+# target_compile_options(values PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(values ${CMAKE_THREAD_LIBS_INIT} )
+
+set(CPP_CORO_SOURCES common/lib/lightweight_manual_reset_event.cpp common/lib/async_auto_reset_event.cpp common/lib/async_manual_reset_event.cpp common/lib/async_mutex.cpp common/lib/auto_reset_event.cpp common/lib/cancellation_registration.cpp common/lib/cancellation_source.cpp common/lib/cancellation_state.cpp common/lib/cancellation_token.cpp common/lib/spin_mutex.cpp common/lib/spin_wait.cpp)
+
+set(COROUTINES_SOURCES coroutines/main.cpp coroutines/ex1.cpp coroutines/ex2.cpp coroutines/ex3.cpp coroutines/ex4.cpp coroutines/ex5.cpp coroutines/ex6.cpp coroutines/ex7.cpp)
+add_executable(coroutines ${COMMON_SOURCES} ${COROUTINES_SOURCES} ${CPP_CORO_SOURCES})
+target_compile_options(coroutines PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(coroutines ${CMAKE_THREAD_LIBS_INIT} )
