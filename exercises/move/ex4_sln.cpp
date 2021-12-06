@@ -13,7 +13,7 @@ namespace
 template <typename T>
 struct Object
 {
-  template <typename S, typename = std::enable_if_t<std::is_same<std::remove_cvref_t<S>, T>::value>>
+  template <typename S, typename = std::enable_if_t<std::is_same<std::remove_cv_t<std::remove_reference_t<S>>, T>::value>>
   Object(S &&t) : m_value(std::forward<S>(t)) {}
   
   T m_value;

@@ -1,10 +1,11 @@
 This repositoy requires:
-  - gcc 10.2 or higher (with coroutine support)
+  - gcc 8 or higher
   - cmake 3.0 or higher
 
 To build the exercises:
-
-1) cd exercises
-2) mkdir build
-3) cmake ../
-4) make
+1) sudo yum install cmake
+2) export PATH=/opt/rh/devtoolset-8/root/usr/bin:$PATH
+3) cd exercises
+4) mkdir build
+5) cmake ../
+6) make

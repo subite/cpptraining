@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(cpptraining)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(common)
 
@@ -33,9 +33,3 @@ add_executable(values ${COMMON_SOURCES} ${VALUES_SOURCES})
 # target_compile_options(values PRIVATE -Wall -Wextra -Wpedantic)
 target_link_libraries(values ${CMAKE_THREAD_LIBS_INIT} )
 
-set(CPP_CORO_SOURCES common/lib/lightweight_manual_reset_event.cpp common/lib/async_auto_reset_event.cpp common/lib/async_manual_reset_event.cpp common/lib/async_mutex.cpp common/lib/auto_reset_event.cpp common/lib/cancellation_registration.cpp common/lib/cancellation_source.cpp common/lib/cancellation_state.cpp common/lib/cancellation_token.cpp common/lib/spin_mutex.cpp common/lib/spin_wait.cpp)
-
-set(COROUTINES_SOURCES coroutines/main.cpp coroutines/ex1.cpp coroutines/ex2.cpp coroutines/ex3.cpp coroutines/ex4.cpp coroutines/ex5.cpp coroutines/ex6.cpp coroutines/ex7.cpp)
-add_executable(coroutines ${COMMON_SOURCES} ${COROUTINES_SOURCES} ${CPP_CORO_SOURCES})
-target_compile_options(coroutines PRIVATE -Wall -Wextra -Wpedantic)
-target_link_libraries(coroutines ${CMAKE_THREAD_LIBS_INIT} )

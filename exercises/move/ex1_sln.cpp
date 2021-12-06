@@ -1,6 +1,6 @@
 #include <global.h>
 
-namspace
+namespace
 {
 
 /***
